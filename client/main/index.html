@@ -55,8 +55,44 @@
             <div class="form-group">
               <input id="password" type="password" placeholder="Password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-            <button type="signup" class="btn btn-success">Sign up</button>
+              <script>
+                  //document.getElementById("signup").onclick = user();
+                 function user() {
+
+                     var ref = new Firebase("https://glowing-inferno-7563.firebaseio.com");
+
+                     var email = $('#email').val();
+                     var password = $('#password').val();
+                     console.log(email)
+                     console.log(password)
+                     ref.createUser({
+                         email: email,
+                         password: password
+                     }, function (error, userData) {
+                         if (error) {
+                             console.log("Error creating user:", error);
+                         } else {
+                             console.log("Successfully created user account with uid:", userData.uid);
+                         }
+                     });
+                 }
+                  //document.getlElementByID("signin").onclick = signin();
+
+                  function signin() {
+                      var ref = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com");
+                      ref.authWithPassword({
+                          email: "bobtony@firebase.com",
+                          password: "correcthorsebatterystaple"
+                      }, function (error, authData) { /* Your Code */
+                      }, {
+                          remember: "sessionOnly"
+                      });
+                  }
+
+              </script>
+              <input onclick="signin()" id="signin" type="button" class="btn btn-info" value="Sign In">
+              <input onclick="user()" id="signup" type="button" class="btn btn-info" value="Sign Up">
+
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -92,7 +128,8 @@
       <!-- Example row of columns -->
     <div class="row text-center">
         <div class="col-md-12">
-            <h2>PROPIETARY S2S TECHNOLOGY</h2>
+            <h2>PROPRIETARY S2S TECHNOLOGY</h2>
+            <h4>Student-To-Student</h4>
         </div>
     </div>
     <div class="row text-center">
@@ -117,7 +154,7 @@
       </footer>
     </div> <!-- /container -->
 
-    
+
     <script>src="scriptmessageinput.js"</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

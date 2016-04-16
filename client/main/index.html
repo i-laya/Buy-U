@@ -73,12 +73,15 @@
                              console.log("Error creating user:", error);
                          } else {
                              console.log("Successfully created user account with uid:", userData.uid);
+                             window.open('userProfile.html')
                          }
                      });
+
                  }
                   //document.getlElementByID("signin").onclick = signin();
 
                   function signin() {
+                      window.open('userProfile.html')
                       var ref = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com");
                       ref.authWithPassword({
                           email: "bobtony@firebase.com",
@@ -90,7 +93,7 @@
                   }
 
               </script>
-              <input onclick="signin()" id="signin" type="button" class="btn btn-info" value="Sign In">
+             <input onclick="signin()" id="signin" type="button" class="btn btn-info" value="Sign In">
               <input onclick="user()" id="signup" type="button" class="btn btn-info" value="Sign Up">
 
           </form>
@@ -116,7 +119,12 @@
                           //itemRef.push({ search : '$70', 'http://www.tactics.com/a/5hsf/9/globe-spearpoint-bamboo-40-complete-longboard-top-profile.jpg' });
 
                       }
+
+                      if (search == "longboard"){
+                          window.open("itemProfile.html");
+                      }
                   });</script>
+
 
 
               </div>

@@ -49,7 +49,7 @@
 
     <div class="jumbotron">
         <h1 class="display-3"> Steven Chun </h1>
-        <p class="lead"> Venmo: @stevenchun</p>
+        <a href="https://venmo.com/stevenchun"><p class="lead"> Venmo: @stevenchun</p></a>
         <p class="lead"> Steven.R.Chun.19@dartmouth.edu </p>
         <!--<p class="lead"> Steven.R.Chun.19@dartmouth.edu </p>-->
         <p><a class="btn btn-lg btn-success" href="#" role="button">Venmo</a> <a class="btn btn-lg btn-success" href="#" role="button">Email</a> </p>
@@ -57,6 +57,23 @@
         <!--<p class="lead"> Reviews: </p>-->
         <div class="rating">
             <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> :etaR
+        </div>
+        <div>
+            <input id="search" type="text" class="form-control input-lg" placeholder="Sell a new item" />
+            <input id="price" type="text" class="form-control input-lg" placeholder="price" />
+            <!--UGLY AS HELLLLLL-->
+            <script>
+                $('#price').keypress(function (e) {
+                if (e.keyCode == 13) {
+                    var itemRef = new Firebase('https://glowing-inferno-7563.firebaseio.com/items');
+                    var search = $('#search').val();
+                    //var price = $('#price').val();
+                    itemRef.push({'item': search, 'price': "$30"});
+                    //itemRef.push({ search : '$70', 'http://www.tactics.com/a/5hsf/9/globe-spearpoint-bamboo-40-complete-longboard-top-profile.jpg' });
+
+                }
+            });
+            </script>
         </div>
 
     </div>

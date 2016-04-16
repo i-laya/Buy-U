@@ -8,7 +8,7 @@ body {
 .jumbotron {
     padding-top: 15rem;
     padding-bottom:15rem;
-    background-color: #3498db;
+    /*background-color: #3498db;*/
     background-image: url(https://dl.dropboxusercontent.com/s/dh0vlte2pb7r21z/22035791838_2920b54611_k.jpg?dl=0);
     background-size:cover;
     background-position: center;
@@ -26,7 +26,15 @@ body {
 #intro {
     padding: 1rem;
 }
+#intro h2{
+    font-weight: 700;
+}
 
-#steps {
+.steps {
     margin-top: 2rem;
+}
+
+.steps p{
+    font-size: 2rem;
+    font-weight: 200;
 }

@@ -2,4 +2,31 @@
 body {
   padding-top: 50px;
   padding-bottom: 20px;
+  font-family: "Oswald";
+}
+
+.jumbotron {
+    padding-top: 15rem;
+    padding-bottom:15rem;
+    background-color: #3498db;
+    background-image: url(https://dl.dropboxusercontent.com/s/dh0vlte2pb7r21z/22035791838_2920b54611_k.jpg?dl=0);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.jumbotron h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    margin: 4rem;
+}
+
+#intro {
+    padding: 1rem;
+}
+
+#steps {
+    margin-top: 2rem;
 }
